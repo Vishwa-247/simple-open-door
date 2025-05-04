@@ -4,11 +4,8 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  plugins: [
-    react(),
-    // We're removing the componentTagger plugin as it's causing issues
-  ],
+export default defineConfig({
+  plugins: [react()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './')
@@ -19,10 +16,9 @@ export default defineConfig(({ mode }) => ({
     host: "::"
   },
   build: {
-    // Adding explicit build configuration
     outDir: 'dist',
     emptyOutDir: true,
-    sourcemap: mode === 'development',
-    minify: mode !== 'development'
+    sourcemap: true,
+    minify: false
   }
-}))
+})
