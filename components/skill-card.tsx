@@ -1,3 +1,4 @@
+
 import { Code, Server, Database, Brain, BarChart, MessageSquare, Cloud, GitBranch, File } from "lucide-react"
 
 interface SkillCardProps {
@@ -32,9 +33,11 @@ export default function SkillCard({ title, icon }: SkillCardProps) {
   }
 
   return (
-    <div className="skill-card bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow">
-      <div className="bg-sky-100 text-sky-700 dark:bg-sky-800 dark:text-sky-100 p-3 rounded-full mb-4">{getIcon()}</div>
-      <h3 className="font-medium text-gray-800 dark:text-gray-200">{title}</h3>
+    <div className="skill-card bg-card border rounded-xl shadow-sm p-6 flex flex-col items-center justify-center text-center hover:shadow-md transition-all duration-300 hover:translate-y-[-5px]">
+      <div className="bg-gradient-to-br from-sky-100 to-indigo-100 dark:from-sky-900/30 dark:to-indigo-900/30 text-sky-700 dark:text-sky-300 p-4 rounded-full mb-4">
+        {getIcon()}
+      </div>
+      <h3 className="font-medium">{title}</h3>
     </div>
   )
 }
