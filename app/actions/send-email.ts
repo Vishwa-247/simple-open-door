@@ -1,3 +1,4 @@
+
 "use server"
 
 import { Resend } from "resend"
@@ -18,7 +19,7 @@ export async function sendEmail(data: EmailData) {
     const { data: emailResponse, error } = await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>", // You can change this to a verified domain later
       to: ["vishwathouti247@gmail.com"],
-      reply_to: data.email,
+      replyTo: data.email,
       subject: `Portfolio Contact: ${data.subject}`,
       html: `
         <h3>New Contact Form Submission</h3>
