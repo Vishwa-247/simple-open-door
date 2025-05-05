@@ -5,11 +5,11 @@ import path from 'path'
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
+export default defineConfig({
   plugins: [
     react(),
-    mode === 'development' && componentTagger(),
-  ].filter(Boolean),
+    componentTagger()
+  ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './')
@@ -25,4 +25,4 @@ export default defineConfig(({ mode }) => ({
     sourcemap: true,
     minify: false
   }
-}))
+})
