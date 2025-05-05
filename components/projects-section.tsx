@@ -48,7 +48,7 @@ const projects = [
 export default function ProjectsSection() {
   const sectionRef = useRef<HTMLElement>(null)
   const headingRef = useRef<HTMLHeadingElement>(null)
-  const projectRefs = useRef<(HTMLDivElement | null)[]>([])
+  const projectRefs = useRef<Array<HTMLDivElement | null>>([])
 
   useEffect(() => {
     if (sectionRef.current && headingRef.current) {
@@ -105,7 +105,9 @@ export default function ProjectsSection() {
           {projects.map((project, index) => (
             <div 
               key={project.title} 
-              ref={el => projectRefs.current[index] = el}
+              ref={el => {
+                projectRefs.current[index] = el;
+              }}
               className="transition-all duration-300 hover:transform hover:scale-[1.02]"
             >
               <Card className="overflow-hidden h-full border-none shadow-lg hover:shadow-xl transition-shadow duration-300">

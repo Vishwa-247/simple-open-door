@@ -33,7 +33,7 @@ const experiences = [
 export default function ExperienceSection() {
   const sectionRef = useRef<HTMLElement>(null)
   const headingRef = useRef<HTMLHeadingElement>(null)
-  const experienceRefs = useRef<(HTMLDivElement | null)[]>([])
+  const experienceRefs = useRef<Array<HTMLDivElement | null>>([])
 
   useEffect(() => {
     if (sectionRef.current && headingRef.current) {
@@ -90,7 +90,9 @@ export default function ExperienceSection() {
           {experiences.map((experience, index) => (
             <div 
               key={experience.title}
-              ref={el => experienceRefs.current[index] = el}
+              ref={el => {
+                experienceRefs.current[index] = el;
+              }}
               className={`mb-10 ${
                 index % 2 === 0 ? 'md:mr-[calc(50%+1.5rem)] md:ml-0' : 'md:ml-[calc(50%+1.5rem)] md:mr-0'
               }`}

@@ -2,9 +2,8 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Link from "next/link"
 import { ThemeToggle } from "./theme-toggle"
-import { Menu, X, ChevronDown } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { gsap } from "gsap"
 
 export default function Navbar() {
@@ -64,11 +63,11 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link href="/" className="font-bold text-xl text-gray-900 dark:text-white flex items-center">
+          <a href="#" className="font-bold text-xl text-gray-900 dark:text-white flex items-center">
             <span className="bg-gradient-to-r from-sky-500 to-indigo-600 bg-clip-text text-transparent">
               Vishwa Teja
             </span>
-          </Link>
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">

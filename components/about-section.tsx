@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger)
 export default function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null)
   const headingRef = useRef<HTMLHeadingElement>(null)
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([])
+  const cardsRef = useRef<Array<HTMLDivElement | null>>([])
 
   useEffect(() => {
     if (sectionRef.current && headingRef.current) {
@@ -39,7 +39,7 @@ export default function AboutSection() {
         );
       
       // Animate cards with staggered effect and hover animations
-      cardsRef.current.forEach((card, index) => {
+      cardsRef.forEach((card, index) => {
         if (card) {
           // Initial animation
           gsap.fromTo(
@@ -94,7 +94,9 @@ export default function AboutSection() {
         
         <div className="grid md:grid-cols-2 gap-8">
           <div
-            ref={el => cardsRef.current[0] = el}
+            ref={el => {
+              cardsRef[0] = el;
+            }}
             className="about-card"
           >
             <Card className="h-full">
@@ -112,7 +114,9 @@ export default function AboutSection() {
           </div>
           
           <div
-            ref={el => cardsRef.current[1] = el}
+            ref={el => {
+              cardsRef[1] = el;
+            }}
             className="about-card"
           >
             <Card className="h-full">
@@ -130,7 +134,9 @@ export default function AboutSection() {
           </div>
           
           <div
-            ref={el => cardsRef.current[2] = el}
+            ref={el => {
+              cardsRef[2] = el;
+            }}
             className="about-card"
           >
             <Card className="h-full">
@@ -148,7 +154,9 @@ export default function AboutSection() {
           </div>
           
           <div
-            ref={el => cardsRef.current[3] = el}
+            ref={el => {
+              cardsRef[3] = el;
+            }}
             className="about-card"
           >
             <Card className="h-full">
